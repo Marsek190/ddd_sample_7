@@ -5,6 +5,7 @@ namespace Dyson\Modules\HelpDesk\Domain\Handler;
 use Dyson\Modules\HelpDesk\Domain\Event\RemoveCustomerDevice;
 use Dyson\Modules\HelpDesk\Domain\Exception\DeviceNotFoundException;
 use Dyson\Modules\HelpDesk\Domain\Exception\CustomerNotFoundException;
+use Dyson\Modules\HelpDesk\Domain\Exception\DataAccessException;
 use Dyson\Modules\HelpDesk\Domain\Handler\Dto\CustomerDeviceDto;
 use Dyson\Modules\HelpDesk\Domain\Service\CustomerRepositoryInterface;
 use Dyson\Modules\HelpDesk\Domain\Service\EventDispatcherInterface;
@@ -25,6 +26,7 @@ class RemoveCustomerDeviceHandler
      * @return void
      * @throws DeviceNotFoundException
      * @throws CustomerNotFoundException
+     * @throws DataAccessException
      */
     public function handle(CustomerDeviceDto $customerDeviceDto)
     {
