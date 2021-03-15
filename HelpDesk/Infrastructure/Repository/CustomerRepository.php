@@ -83,6 +83,8 @@ class CustomerRepository implements CustomerRepositoryInterface
             if (!$this->connection->execute($query, $queryMapping)) {
                 throw new DataAccessException();
             }
+
+            return true;
         }
 
         $deviceSerials = array_map(function (Device $device) {
@@ -103,5 +105,7 @@ class CustomerRepository implements CustomerRepositoryInterface
         if (!$this->connection->execute($query, $queryMapping)) {
             throw new DataAccessException();
         }
+        
+        return true;
     }
 }
