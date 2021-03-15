@@ -17,7 +17,7 @@ interface CustomerRepositoryInterface
 
     /**
      * @param Customer $customer
-     * @return void
+     * @return bool
      * @throws DataAccessException
      */
     public function save(Customer $customer);
